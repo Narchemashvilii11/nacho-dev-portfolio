@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>URBANSTORE - ტანსაცმლის მაღაზია</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header class="navbar">
+      <div class="logo">URBANSTORE.</div>
+      <ul class="navbar-links">
+         <li><a href="#">მთავარი</a></li>
+         <li><a href="#shop">მაღაზია</a></li>
+         <li><a href="#">კალათა (0)</a></li>
+      </ul>
+   </header>
+
+   <main>
+      <section class="hero-section">
+         <p class="title-paragraph">ახალი კოლექცია 2026</p>
+         <h1>შეარჩიე სტილი ყოველდღიურად</h1>
+         <p class="desc-paragraph">აღმოაჩინეთ პრემიუმ კლასის ქუჩის ტანსაცმელი, სპორტული ფეხსაცმელი და თქვენი ცხოვრების სტილისთვის შექმნილი აუცილებელი ნივთები.</p>
+         <button>იყიდე ახლა</button>
+      </section>
+
+      <section class="shop-section" id="shop">
+         <div class="shop-header">
+            <h2>ჩვენი კოლექცია</h2>
+            <p>6 პროდუქტი</p>
+         </div>
+
+         <div class="products-section">
+            <div class="sidebar-filter">
+               <div class="sidebar-top">
+                  <p class="sidebar-title">ფილტრი</p>
+               </div>
+
+               <div class="sidebar-main">
+                  <p>კატეგორიები</p>
+                  <p>
+                     <input type="radio" id="all-products" checked>
+                     <label for="all-products" class="category-label">ყველა პროდუქტი</label>
+                  </p>
+                  <p>
+                     <input type="radio" id="hoodies">
+                     <label for="hoodies" class="category-label">ჰუდები</label>
+                  </p>
+                  <p>
+                     <input type="radio" id="sneakers">
+                     <label for="sneaker" class="category-label">ფეხსაცმელები</label>
+                  </p>
+                  <p>
+                     <input type="radio" id="shirts">
+                     <label for="shirts" class="category-label">მაისურები</label>
+                  </p>
+               </div>
+               
+               <div class="sidebar-footer">
+                  <p>ფასის შუალედი</p>
+                  <p class="price-range">₾0 – ₾250</p>
+                  <button>გაფილტვრა</button>
+               </div>
+            </div>
+
+            <div class="products-grid">
+               <div class="product-card">
+                  <img src="images/urban-hoodie.webp" alt="ურბანული ჰუდი" class="product-img">
+                  <p class="product-category">ჰუდები</p>
+                  <p class="product-name">ურბანული ოვერსაიზ ჰუდი</p>
+                  <p class="product-price">₾129</p>
+                  <button>კალათაში დამატება</button>
+               </div>
+
+               <div class="product-card">
+                  <img src="images/white-sneakers.webp" alt="თეთრი ფეხსაცმელები" class="product-img">
+                  <p class="product-category">ფეხსაცმელები</p>
+                  <p class="product-name">კლასიკური თეთრი ფეხსაცმელები</p>
+                  <p class="product-price">₾189</p>
+                  <button>კალათაში დამატება</button>
+               </div>
+
+               <div class="product-card">
+                  <img src="images/black-shirt.webp" alt="შავი მაისური" class="product-img">
+                  <p class="product-category">მაისურები</p>
+                  <p class="product-name">შავი საბაზისო მაისური</p>
+                  <p class="product-price">₾59</p>
+                  <button>კალათაში დამატება</button>
+               </div>
+
+               <div class="product-card">
+                  <img src="images/zip-hoodie.avif" alt="ელვა-შესაკრავით ჰუდი" class="product-img">
+                  <p class="product-category">ჰუდები</p>
+                  <p class="product-name">ქუჩის სტილის ჰუდი ელვა-შესაკრავით</p>
+                  <p class="product-price">₾149</p>
+                  <button>კალათაში დამატება</button>
+               </div>
+
+               <div class="product-card">
+                  <img src="images/running-shoes.jpg" alt="სარბენი ფეხსაცმელები" class="product-img">
+                  <p class="product-category">ფეხსაცმელები</p>
+                  <p class="product-name">ქრეტრო სტილის სარბენი კედები</p>
+                  <p class="product-price">₾219</p>
+                  <button>კალათაში დამატება</button>
+               </div>
+
+               <div class="product-card">
+                  <img src="images/cotton-shirt.webp" alt="ბამბის მაისური" class="product-img">
+                  <p class="product-category">მაისურები</p>
+                  <p class="product-name">მინიმალისტური ბამბის მაისური</p>
+                  <p class="product-price">₾69</p>
+                  <button>კალათაში დამატება</button>
+               </div>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <footer class="site-footer">
+      <p>&copy; 2026 URBANSTORE. ყველა უფლება დაცულია.</p>
+   </footer>
+</body>
+</html>

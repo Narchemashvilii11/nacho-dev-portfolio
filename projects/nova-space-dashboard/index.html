@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Nova Space</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header class="navbar">
+      <div class="logo">✦ NOVA SPACE</div>
+      <ul class="nav-links">
+         <li><a href="#">მთავარი</a></li>
+         <li><a href="#missions">მისიები</a></li>
+         <li><a href="#schedule">განრიგი</a></li>
+      </ul>
+   </header>
+
+   <main>
+      <section class="hero-section">
+         <p class="paragraph-catchy">ჰორიზონტის მიღმა</p>
+         <h1>გამოიკვლიე კოსმოსი.</h1>
+         <p class="hero-desc">აღმოაჩინეთ არაჩვეულებრივი მისიები, შორეული პლანეტები და კოსმოსის კვლევის მომავალი.</p>
+         <button>მისიების გამოკვლევა</button>
+      </section>
+
+      <section class="stats-section">
+         <div class="stat-card">
+            <p class="stat-value">12</p>
+            <p class="stat-name">აქტიური მისია</p>
+         </div>
+
+         <div class="stat-card">
+            <p class="stat-value">08</p>
+            <p class="stat-name">გამოკვლეული პლანეტა</p>
+         </div>
+
+         <div class="stat-card">
+            <p class="stat-value">24</p>
+            <p class="stat-name">ასტრონავტი</p>
+         </div>
+      </section>
+
+      <section class="missions-section" id="missions">
+         <h2>რჩეული მისიები</h2>
+         <div class="missions-grid">
+            <div class="mission-card">
+               <img src="images/mars.jpg" alt="მარსი" class="mission-card-img">
+               <p class="mission-category">კვლევა</p>
+               <p class="mission-name">მარს ოდისეა</p>
+               <p class="mission-desc">აღმოაჩინეთ წითელი პლანეტა.</p>
+               <button>მისიის ნახვა</button>
+            </div>
+
+            <div class="mission-card">
+               <img src="images/saturn.jpg" alt="სატურნი" class="mission-card-img">
+               <p class="mission-category">ძიება</p>
+               <p class="mission-name">სატურნ-ექსპლორერი</p>
+               <p class="mission-desc">გამოიკვლიეთ სატურნის რგოლები.</p>
+               <button>მისიის ნახვა</button>
+            </div>
+
+            <div class="mission-card">
+               <img src="images/moon.jpg" alt="მთვარე" class="mission-card-img">
+               <p class="mission-category">აღმოჩენა</p>
+               <p class="mission-name">მთვარის ჰორიზონტი</p>
+               <p class="mission-desc">მთვარეზე დაბრუნება.</p>
+               <button>მისიის ნახვა</button>
+            </div>
+         </div>
+      </section>
+
+      <section class="schedule-section" id="schedule">
+         <h2>მისიების განრიგი</h2>
+
+         <table class="schedule-table">
+            <thead>
+               <tr class="bordered">
+                  <th>მისია</th>
+                  <th>დანიშნულება</th>
+                  <th>სტატუსი</th>
+               </tr>
+            </thead>
+
+            <tbody>
+               <tr class="bordered">
+                  <td>ოდისეი</td>
+                  <td>მარსი</td>
+                  <td class="active">აქტიური</td>
+               </tr>
+
+               <tr class="bordered">
+                  <td>ექსლორერი</td>
+                  <td>სატურნი</td>
+                  <td class="planned">დაგეგმილი</td>
+               </tr>
+
+               <tr>
+                  <td>ჰორიზონტი</td>
+                  <td>მთვარე</td>
+                  <td class="active">აქტიური</td>
+               </tr>
+            </tbody>
+         </table>
+      </section>
+   </main>
+
+   <footer class="site-footer">
+      <p>&copy; 2026 NOVA SPACE. ყველა უფლება დაცულია.</p>
+   </footer>
+</body>
+</html>

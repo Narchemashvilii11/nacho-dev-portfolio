@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bookshelf Dashboard</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+   <div class="dashboard">
+      <aside class="sidebar">
+         <div class="top">
+            <div class="logo">
+               <img src="images/sidebar-icon.png" alt="Bookshelf Icon" class="sidebar-icon">
+               <p>Bookshelf</p>
+            </div>
+            <input type="text" class="sidebar-search-bar" placeholder="Search shelves...">
+         </div>
+         <div class="main">
+            <h4>LIBRARY</h4>
+            <div class="pages-list">
+               <div class="page-card">
+                  <p class="page-name">All books</p>
+                  <p class="stat">45</p>
+               </div>
+
+               <div class="page-card current-page">
+                  <p class="page-name">Currently Reading</p>
+                  <p class="stat">5</p>
+               </div>
+
+               <div class="page-card">
+                  <p class="page-name">Want to Read</p>
+                  <p class="stat">15</p>
+               </div>
+
+               <div class="page-card">
+                  <p class="page-name">Read</p>
+                  <p class="stat">20</p>
+               </div>
+
+               <div class="page-card">
+                  <p class="page-name">Favourites</p>
+                  <p class="stat">5</p>
+               </div>
+            </div>
+         </div>
+      </aside>
+
+      <main>
+         <header class="main-header">
+            <input type="text" class="header-search-bar" placeholder="Search books...">
+            <img src="images/profile-icon.png" alt="Profile icon" class="profile-img">
+         </header>
+
+         <section class="page-heading">
+            <div class="heading-left">
+               <h2>Currently Reading</h2>
+               <p>5 books</p>
+            </div>
+            <button class="sort-btn">Sort by: Recent</button>
+         </section>
+
+         <section class="books-grid">
+            <div class="book-card">
+               <img src="images/book-hail-mary.jpg" alt="Book 'Hail Mary'" class="book-img">
+               <div class="book-content">
+                  <div class="top">
+                     <p class="book-name">Project Hail Mary</p>
+                     <p class="book-author">Andy Weir</p>
+                     <p class="book-category">Science Fiction</p>
+                  </div>
+
+                  <div class="footer">
+                     <div class="progress-stat">
+                        <p class="progress-text">Progress</p>
+                        <p class="progress-value">65%</p>
+                     </div>
+                     <div class="progress-bar">
+                        <div class="progress-range-65"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="book-card">
+               <img src="images/book-educated.jpg" alt="Book 'Educated'" class="book-img">
+               <div class="book-content">
+                  <div class="top">
+                     <p class="book-name">Educated</p>
+                     <p class="book-author">Tara Westover</p>
+                     <p class="book-category">Memoir</p>
+                  </div>
+
+                  <div class="footer">
+                     <div class="progress-stat">
+                        <p class="progress-text">Progress</p>
+                        <p class="progress-value">30%</p>
+                     </div>
+                     <div class="progress-bar">
+                        <div class="progress-range-30"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="book-card">
+               <img src="images/book-the-name-of-the-wind.jpg" alt="Book 'The Name of the Wind'" class="book-img">
+               <div class="book-content">
+                  <div class="top">
+                     <p class="book-name">The Name of the Wind</p>
+                     <p class="book-author">Patrick Rothfuss</p>
+                     <p class="book-category">Fantasy</p>
+                  </div>
+
+                  <div class="footer">
+                     <div class="progress-stat">
+                        <p class="progress-text">Progress</p>
+                        <p class="progress-value">82%</p>
+                     </div>
+                     <div class="progress-bar">
+                        <div class="progress-range-82"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="book-card">
+               <img src="images/book-deep-work.jpg" alt="Book 'Deep Work'" class="book-img">
+               <div class="book-content">
+                  <div class="top">
+                     <p class="book-name">Deep Work</p>
+                     <p class="book-author">Cal Newport</p>
+                     <p class="book-category">Productivity</p>
+                  </div>
+
+                  <div class="footer">
+                     <div class="progress-stat">
+                        <p class="progress-text">Progress</p>
+                        <p class="progress-value">15%</p>
+                     </div>
+                     <div class="progress-bar">
+                        <div class="progress-range-15"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="book-card">
+               <img src="images/book-circe.jpg" alt="Book 'Circe'" class="book-img">
+               <div class="book-content">
+                  <div class="top">
+                     <p class="book-name">Circe</p>
+                     <p class="book-author">Madeline Miller</p>
+                     <p class="book-category">Mythology</p>
+                  </div>
+
+                  <div class="footer">
+                     <div class="progress-stat">
+                        <p class="progress-text">Progress</p>
+                        <p class="progress-value">47%</p>
+                     </div>
+                     <div class="progress-bar">
+                        <div class="progress-range-47"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+   </div>
+</body>
+</html>

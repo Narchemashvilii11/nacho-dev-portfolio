@@ -1,0 +1,252 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Noto Sans Georgian", sans-serif;
+}
+
+.site-header {
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   width: 100%;
+   color: white;
+   background: linear-gradient(90deg,#050B18 0%, #0B1D3A 55%, #102F60 100%);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 5px 20px;
+}
+
+.hero-section {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+   background: url(images/header-background.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   color: #ffffff;
+}
+
+.heading {
+   font-size: 3rem;
+   letter-spacing: 2px;
+}
+
+nav {
+   display: flex;
+   align-items: center;
+   padding: 0 10px;
+}
+
+.logo {
+   color: #1677FF;
+   letter-spacing: 2px;
+   font-size: 1.2rem;
+}
+
+.nav-links {
+   list-style-type: none;
+}
+
+.nav-links li {
+   display: inline-block;
+}
+
+.nav-links li a {
+   display: inline-block;
+   padding: 13px 10px;
+   color: white;
+   text-decoration: none;
+}
+
+.hero-section p {
+   margin-top: 30px;
+   width: 80%;
+   font-size: 0.9rem;
+}
+
+.view-products-btn {
+   margin-top: 30px;
+   font-family: "Noto Sans Georgian", sans-serif;
+   font-size: 1.2rem;
+   padding: 8px 17px;
+   background: linear-gradient(135deg, #1677FF, #0050C8);
+   border: none;
+   border-radius: 20px;
+   cursor: pointer;
+   text-decoration: none;
+   color: #ffffff;
+}
+
+.view-products-btn:hover {
+   background: linear-gradient(135deg, #0f55b6, #003e9c);
+}
+
+.view-products-btn a {
+   text-decoration: none;
+   color: #ffffff;
+}
+
+
+.products {
+   scroll-margin-top: 80px;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   gap: 50px;
+   margin-top: 40px;
+   padding: 0 100px;
+}
+
+.product-card {
+   padding: 15px;
+   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.12);
+   border-radius: 20px;
+   border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.product-category-gaming {
+   background-color: rgba(0, 137, 0, 0.466);
+   color: rgb(0, 103, 0);
+   padding: 1px 7px;
+   border-radius: 20px;
+}
+
+.product-category-accessories {
+   background-color: rgba(10, 91, 177, 0.466);
+   color: rgb(0, 0, 255);
+   padding: 1px 7px;
+   border-radius: 20px;
+}
+
+.product-category-peripherals {
+   background-color: rgba(234, 237, 241, 0.811);
+   color: rgb(239, 25, 164);
+   padding: 1px 7px;
+   border-radius: 20px;
+}
+
+.product-img {
+   width: 100%;
+   margin-top: 10px;
+   border-radius: 20px;
+}
+
+.product-title {
+   font-weight: 600;
+   margin-top: 10px;
+}
+
+.product-description {
+   font-size: 0.8rem;
+   margin-top: 10px;
+}
+
+.old-price {
+   font-size: 0.8rem;
+   text-decoration: line-through;
+   color: rgba(0, 0, 0, 0.7);
+}
+
+.product-price {
+   margin-top: 10px;
+}
+
+.add-to-cart-btn {
+   width: 100%;
+   margin-top: 20px;
+   background: linear-gradient(135deg, #1677FF, #0050C8);
+   font-family: "Noto Sans Georgian", sans-serif;
+   font-size: 1rem;
+   color: #ffffff;
+   border: none;
+   border-radius: 20px;
+   padding: 10px;
+   cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+   background: linear-gradient(135deg, #0f55b6, #003e9c);
+}
+
+footer {
+   background: linear-gradient(90deg,#050B18 0%, #0B1D3A 55%, #102F60 100%);
+   padding: 50px;
+   text-align: center;
+   color: #ffffff;
+   font-size: 1.25rem;
+   margin-top: 70px;
+}
+
+@media (max-width: 768px) {
+   .site-header{
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px 20px;
+   }
+
+   .products {
+      padding: 0 50px;
+   }
+}
+
+@media (max-width: 640px) {
+   .site-header {
+      position: static;
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 20px;
+   }
+
+   .nav-links {
+      width: 100%;
+   }
+
+   .site-header li {
+      display: block;
+      margin-bottom: 10px;
+   }
+
+   .site-header a {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      background-color: #1F2937;
+      border-radius: 10px;
+   }
+
+   .logo {
+      margin-bottom: 5px;
+   }
+
+   .hero-section {
+      min-height: 50vh;
+   }
+
+   .hero-section h1 {
+      font-size: 2rem;
+   }
+
+   .hero-section p {
+      display: none;
+   }
+
+   .products {
+      grid-template-columns: minmax(0, 1fr);
+      padding: 0 50px;
+   }
+}
