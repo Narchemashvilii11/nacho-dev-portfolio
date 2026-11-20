@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Exam Mockup & Inspect — PIXEL.CRAFT (შედეგი 6)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #1E293B; color: #0F172A; }
+
+        /* Figma-ს ზედა Toolbar */
+        .figma-toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #0F172A;
+            color: #F8FAFC;
+            padding: 10px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #334155;
+            font-size: 13px;
+        }
+        .figma-title { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+        .frame-tag { background: #7C3AED; color: #fff; padding: 3px 8px; border-radius: 4px; font-size: 11px; }
+        .toolbar-actions { display: flex; gap: 10px; }
+        .toggle-btn {
+            background-color: #EC4899;
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .toggle-btn:hover { background-color: #DB2777; }
+        .export-btn {
+            background-color: #7C3AED;
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .export-btn:hover { background-color: #6D28D9; }
+
+        /* მარცხენა Layers და მთავარი Canvas */
+        .workspace { display: flex; min-height: calc(100vh - 55px); }
+        .layers-panel {
+            width: 240px;
+            background-color: #0F172A;
+            color: #CBD5E1;
+            border-right: 1px solid #334155;
+            padding: 16px;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .layers-panel h4 {
+            color: #94A3B8;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .layer-item {
+            padding: 6px 8px;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            font-family: Consolas, monospace;
+        }
+        .layer-frame { background-color: #1E293B; color: #C4B5FD; font-weight: 700; }
+        .layer-child { padding-left: 18px; color: #CBD5E1; }
+
+        .canvas { flex: 1; padding: 24px; overflow-x: auto; }
+        .artboard {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #F8FAFC;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        /* Inspect ანოტაციები */
+        .spec-badge {
+            display: inline-block;
+            background-color: #FDF2F8;
+            color: #BE185D;
+            border: 1px solid #F472B6;
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin: 3px 2px;
+        }
+        body.hide-specs .spec-badge,
+        body.hide-specs .svg-export-box { display: none; }
+
+        .svg-export-box {
+            max-width: 1200px;
+            margin: 0 auto 18px auto;
+            background: #F5F3FF;
+            border: 1px dashed #7C3AED;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #4C1D95;
+        }
+        .svg-export-box pre {
+            background: #FFFFFF;
+            color: #0F172A;
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 6px;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+            border: 1px solid #DDD6FE;
+        }
+
+        /* მაკეტის ზუსტი ვიზუალი (1:1 CSS-თან) */
+        .m-header { background-color: #FFFFFF; border-bottom: 1px solid #E2E8F0; padding: 16px 20px; }
+        .m-header-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .m-logo { display: flex; align-items: center; gap: 10px; color: #0F172A; font-size: 20px; font-weight: 700; }
+        .m-nav-group { display: flex; align-items: center; gap: 28px; }
+        .m-nav { display: flex; gap: 22px; color: #475569; font-size: 15px; font-weight: 700; }
+        .m-hbtn { background: #7C3AED; color: #FFFFFF; padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 700; }
+
+        .m-hero { max-width: 1120px; margin: 45px auto; padding: 0 20px; text-align: center; }
+        .m-badge { display: inline-block; background: #EDE9FE; color: #6D28D9; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 50px; margin-bottom: 14px; }
+        .m-h1 { max-width: 720px; margin: 0 auto 14px auto; font-size: 36px; line-height: 1.25; color: #0F172A; font-weight: 700; }
+        .m-p { max-width: 640px; margin: 0 auto 24px auto; font-size: 16px; line-height: 1.6; color: #475569; }
+        .m-cta { display: inline-flex; align-items: center; justify-content: center; height: 48px; background: #7C3AED; color: #FFFFFF; padding: 0 30px; border-radius: 10px; font-size: 16px; font-weight: 700; margin-bottom: 34px; }
+        .m-hero-img { width: 100%; height: 340px; object-fit: cover; border-radius: 16px; display: block; }
+
+        .m-features { max-width: 1120px; margin: 55px auto; padding: 0 20px; }
+        .m-stitle { font-size: 28px; text-align: center; color: #0F172A; margin-bottom: 30px; font-weight: 700; }
+        .m-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .m-card { background: #FFFFFF; border: 1px solid #E2E8F0; padding: 24px; border-radius: 14px; display: flex; align-items: flex-start; gap: 18px; box-shadow: 0px 4px 12px rgba(15, 23, 42, 0.04); }
+        .m-icon { width: 48px; height: 48px; flex-shrink: 0; background: #F3E8FF; color: #7C3AED; font-size: 18px; font-weight: 700; border-radius: 12px; display: flex; justify-content: center; align-items: center; }
+        .m-card h3 { font-size: 19px; color: #0F172A; margin-bottom: 6px; }
+        .m-card p { font-size: 15px; line-height: 1.5; color: #475569; }
+
+        .m-footer { background: #1E1B4B; color: #C7D2FE; height: 70px; display: flex; justify-content: center; align-items: center; margin-top: 55px; }
+
+        @media (max-width: 900px) {
+            .layers-panel { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="figma-toolbar">
+        <div class="figma-title">
+            <span class="frame-tag"># შეფასება N6 — Frame (1280px)</span>
+            <span>PIXEL.CRAFT — საგამოცდო მაკეტი (Body bg: #F8FAFC | Container: 1120px)</span>
+        </div>
+        <div class="toolbar-actions">
+            <button class="export-btn" onclick="downloadLogoSVG()">⬇ Export logo.svg</button>
+            <button class="toggle-btn" onclick="document.body.classList.toggle('hide-specs')">
+                Inspect ზომების ჩართვა / გამორთვა
+            </button>
+        </div>
+    </div>
+
+    <div class="workspace">
+        <!-- მარცხენა ფენების პანელი (Layers) -->
+        <aside class="layers-panel">
+            <h4>Layers (ფენები)</h4>
+            <div class="layer-item layer-frame"># 1. Header (.header)</div>
+            <div class="layer-item layer-child">↳ assets/logo.svg + PIXEL.CRAFT</div>
+            <div class="layer-item layer-child">↳ .nav-group (Links + Btn)</div>
+
+            <div class="layer-item layer-frame" style="margin-top:10px;"># 2. Hero (.hero)</div>
+            <div class="layer-item layer-child">↳ Centered Badge, H1, P, Btn</div>
+            <div class="layer-item layer-child">↳ Wide Banner (.hero-img)</div>
+
+            <div class="layer-item layer-frame" style="margin-top:10px;"># 3. Features (.features)</div>
+            <div class="layer-item layer-child">↳ Title (H2: 28px)</div>
+            <div class="layer-item layer-child">↳ 2x2 Grid (4 Horizontal Cards)</div>
+
+            <div class="layer-item layer-frame" style="margin-top:10px;"># 4. Footer (.footer)</div>
+            <div class="layer-item layer-child">↳ Copyright Text</div>
+        </aside>
+
+        <!-- სამუშაო დაფა (Canvas) -->
+        <div class="canvas">
+            <div class="svg-export-box">
+                <strong>Export Asset — <code>assets/logo.svg</code> (ჩამოტვირთეთ ზედა იისფერი ღილაკით ან დააკოპირეთ ეს კოდი):</strong>
+                <pre>&lt;svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;&lt;rect width="32" height="32" rx="8" fill="#7C3AED"/&gt;&lt;polygon points="16,7 25,16 16,25 7,16" stroke="white" stroke-width="2.5" fill="none"/&gt;&lt;/svg&gt;</pre>
+            </div>
+
+            <div class="artboard">
+                <!-- 1. Header (White with bottom border) -->
+                <div class="m-header">
+                    <div class="m-header-inner">
+                        <div class="m-logo">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#7C3AED"/><polygon points="16,7 25,16 16,25 7,16" stroke="white" stroke-width="2.5" fill="none"/></svg>
+                            <span>PIXEL.CRAFT</span>
+                        </div>
+                        <div class="m-nav-group">
+                            <div class="m-nav">
+                                <span>ნამუშევრები</span>
+                                <span>სერვისები</span>
+                                <span>გუნდი</span>
+                            </div>
+                            <div class="m-hbtn">შეკვეთა</div>
+                        </div>
+                    </div>
+                    <div style="text-align:center; margin-top:8px;">
+                        <span class="spec-badge">bg: #FFFFFF | border-bottom: 1px solid #E2E8F0</span>
+                        <span class="spec-badge">padding: 16px 20px</span>
+                        <span class="spec-badge">logo: 20px #0F172A</span>
+                        <span class="spec-badge">nav-group gap: 28px | nav gap: 22px (#475569)</span>
+                        <span class="spec-badge">btn: #7C3AED | 10px 22px | radius: 8px</span>
+                    </div>
+                </div>
+
+                <!-- 2. Hero (Centered text + Full-width banner below) -->
+                <div class="m-hero">
+                    <div><span class="spec-badge">hero: max-width 1120px | margin 45px auto | text-align: center</span></div>
+                    <div><span class="spec-badge">badge: bg #EDE9FE | color #6D28D9 | 12px | pad 6px 14px | radius 50px</span></div>
+                    <div class="m-badge">DIGITAL DESIGN STUDIO</div>
+                    <div class="m-h1">ვქმნით გამორჩეულ ციფრულ გამოცდილებას</div>
+                    <div><span class="spec-badge">h1: max-w 720px | 36px | line-height 1.25 | #0F172A | mb 14px</span></div>
+                    <div class="m-p">თანამედროვე ვებ-ინტერფეისების პროექტირება და სუფთა კოდში გადატანა ნებისმიერი მოწყობილობისთვის.</div>
+                    <div><span class="spec-badge">p: max-w 640px | 16px | line-height 1.6 | #475569 | mb 24px</span></div>
+                    <div class="m-cta">პორტფოლიოს ნახვა</div>
+                    <div><span class="spec-badge">btn: #7C3AED | min-h 48px | pad 0 30px | 16px | radius 10px | mb 34px</span></div>
+                    <img src="https://picsum.photos/1120/380?random=77" alt="Studio Banner" class="m-hero-img">
+                    <div style="margin-top:6px;"><span class="spec-badge">img: w 100% | h 340px | object-fit: cover | radius: 16px</span></div>
+                </div>
+
+                <!-- 3. Features (2x2 Grid with Horizontal Cards) -->
+                <div class="m-features">
+                    <div class="m-stitle">რატომ გვირჩევენ ჩვენ? <span class="spec-badge">h2: 28px | mb: 30px</span></div>
+                    <div style="text-align:center; margin-bottom:12px;">
+                        <span class="spec-badge">grid: repeat(2, 1fr) | gap: 24px</span>
+                        <span class="spec-badge">card: flex | align-items: flex-start | gap: 18px | pad: 24px | radius: 14px | border: 1px solid #E2E8F0</span>
+                        <span class="spec-badge">icon: 48x48 | bg #F3E8FF | color #7C3AED | radius 12px</span>
+                    </div>
+                    <div class="m-grid">
+                        <div class="m-card">
+                            <div class="m-icon">01</div>
+                            <div>
+                                <h3>ზუსტი არქიტექტურა</h3>
+                                <p>დიზაინ-სისტემის თითოეული პიქსელი ზუსტად გადადის კოდში.</p>
+                            </div>
+                        </div>
+                        <div class="m-card">
+                            <div class="m-icon">02</div>
+                            <div>
+                                <h3>სწრაფი ჩატვირთვა</h3>
+                                <p>ოპტიმიზებული SVG ხატულები და სუფთა, მსუბუქი CSS კოდი.</p>
+                            </div>
+                        </div>
+                        <div class="m-card">
+                            <div class="m-icon">03</div>
+                            <div>
+                                <h3>სრული ადაპტაცია</h3>
+                                <p>უნაკლო ვიზუალი სმარტფონებზე, პლანშეტებსა და მონიტორებზე.</p>
+                            </div>
+                        </div>
+                        <div class="m-card">
+                            <div class="m-icon">04</div>
+                            <div>
+                                <h3>თანამედროვე სტანდარტი</h3>
+                                <p>სემანტიკური HTML5 მარკირება და მოქნილი Grid სისტემები.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Footer -->
+                <div class="m-footer">
+                    2026 PIXEL.CRAFT — ყველა უფლება დაცულია &nbsp;
+                    <span class="spec-badge">bg: #1E1B4B | color: #C7D2FE | h: 70px | mt: 55px</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadLogoSVG() {
+            const svgData = '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="32" height="32" rx="8" fill="#7C3AED"/><polygon points="16,7 25,16 16,25 7,16" stroke="white" stroke-width="2.5" fill="none"/></svg>';
+            const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'logo.svg';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
