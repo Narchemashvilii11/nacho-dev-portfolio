@@ -654,3 +654,13 @@ main {
          "techs techs";
    }
 }
+
+@media screen and (max-width: 380px) {
+   .project-label {
+      font-size: 0.6rem;
+   }
+
+   .project-label svg {
+      width: 10px;
+   }
+}
