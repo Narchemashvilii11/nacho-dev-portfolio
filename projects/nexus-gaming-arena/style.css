@@ -43,6 +43,10 @@ body {
    background-color: #dc143c;
 }
 
+.mobile-menu {
+   display: none;
+}
+
 .hero-section {
    display: flex;
    justify-content: center;
@@ -218,19 +222,40 @@ body {
 }
 
 @media (max-width: 768px) {
-   .site-header {
-      flex-direction: column;
-      gap: 10px;
+   .mobile-menu {
+      display: block;
+   }
+
+   .mobile-menu summary {
+      font-size: 1.8rem;
+      list-style-type: none;
+      color: #7C3AED;
+   }
+
+   .mobile-menu nav {
+      position: absolute;
+      background-color: #ffffff;
+      right: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      z-index: 10;
+      padding: 5px 10px;
+   }
+
+   .mobile-menu a {
+      display: block;
+      color: #000000;
+      text-decoration: none;
+      padding: 10px 20px;
+   }
+
+   .nav-right {
+      display: none;
+      width: 100%;
    }
 }
 
 @media (max-width: 640px) {
-   .site-header {
-      position: static;
-      flex-direction: column;
-      gap: 5px;
-   }
-
    .hero-section {
       min-height: 60vh;
       height: auto;
@@ -247,16 +272,5 @@ body {
    .plan-cards {
       grid-template-columns: minmax(0, 1fr);
       gap: 50px;
-   }
-
-   .nav-right {
-      width: 100%;
-   }
-
-   .nav-right a {
-      display: block;
-      text-align: center;
-      background-color: #1F2937;
-      margin-bottom: 10px;
    }
 }

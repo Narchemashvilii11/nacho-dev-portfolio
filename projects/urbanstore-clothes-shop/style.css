@@ -53,6 +53,10 @@ body {
    background-color: #dc143c;
 }
 
+.mobile-menu {
+   display: none;
+}
+
 .hero-section {
    display: flex;
    justify-content: center;
@@ -256,9 +260,35 @@ body {
 }
 
 @media (max-width: 768px) {
-   .navbar {
-      flex-direction: column;
-      gap: 15px;
+   .mobile-menu {
+      display: block;
+   }
+
+   .mobile-menu summary {
+      font-size: 1.8rem;
+      list-style-type: none;
+      color: #ffffff;
+   }
+
+   .mobile-menu nav {
+      position: absolute;
+      background-color: #ffffff;
+      right: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      z-index: 10;
+      padding: 5px 10px;
+   }
+
+   .mobile-menu a {
+      display: block;
+      color: #000000;
+      text-decoration: none;
+      padding: 10px 20px;
+   }
+
+   .navbar-links {
+      display: none;
    }
 
    .desc-paragraph {
@@ -271,10 +301,6 @@ body {
 }
 
 @media (max-width: 640px) {
-   .navbar {
-      position: static;
-   }
-
    .navbar-links {
       width: 100%;
    }
